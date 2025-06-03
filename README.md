@@ -3,16 +3,16 @@
 Ce projet est une application web dédiée à la gestion ou visualisation de données liées aux panneaux solaires.
 
 ## Structure du projet
-projet_panneaux_solaires/
-├── index.html # Page principale 
-├── assets/ # Dossier des ressources statiques
-│ ├── css/ # Fichiers CSS
-│ ├── img/ # Images
-│ ├── js/ # Scripts JavaScript
-│ ├── php/ # Scripts PHP
-│ ├── python/ # Scripts Python
-│ ├── sql/ # Scripts de base de données
-│ └── html/ # Pages HTML
+projet_panneaux_solaires/  
+├── index.html # Page principale  
+├── assets/ # Dossier des ressources statiques  
+│   ├── css/ # Fichiers CSS  
+│   ├── img/ # Images  
+│   ├── js/ # Scripts JavaScript   
+│   ├── php/ # Scripts PHP  
+│   ├── python/ # Scripts Python  
+│   ├── sql/ # Scripts de base de données  
+│   └── html/ # Pages HTML  
 
 
 ## Technologies utilisées
