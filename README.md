@@ -32,12 +32,3 @@ projet_panneaux_solaires/
 1. Cloner le dépôt :
    ```bash
    git clone [URL_DU_DEPOT]
-
-
-   
-Ce README donne une vue d'ensemble claire de votre projet. Vous pouvez l'adapter selon vos besoins spécifiques, comme ajouter :
-- Des instructions d'installation plus détaillées
-- Des captures d'écran
-- Des informations sur les dépendances
-- Un guide de contribution
-- Des exemples d'utilisation
