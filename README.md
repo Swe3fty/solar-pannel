@@ -7,7 +7,6 @@ projet_panneaux_solaires/
 ├── index.html # Page principale  
 ├── assets/ # Dossier des ressources statiques  
 ├── css/ # Fichiers CSS  
-├── img/ # Images  
 ├── js/ # Scripts JavaScript   
 ├── php/ # Scripts PHP  
 ├── python/ # Scripts Python  
