@@ -105,3 +105,14 @@ footer a {
 {
   color : #fff;
 }
+
+#map {
+    width: 100%;
+    height: 600px;
+}
+
+#map_carte {
+    margin-top: 20px;
+}
+
+
