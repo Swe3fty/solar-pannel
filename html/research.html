@@ -19,11 +19,12 @@
     <!-- JS Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
       integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     
     <!---<script src="js/processing.js" defer></script> -->
   </head>
   <body>
+
     <!-- Header -->
     <header>
     <div class="logo-titre">
@@ -39,19 +40,100 @@
     </nav>
     </header>
 
-    <!-- Errors -->
-    <section id="errors" class="container alert alert-danger" style="display: none">
-    </section>
-    
-    <section class="container">
-     
+
+    <!--Titre du formulaire de recherche-->
+    <section class="container mt-4">
+      <h1>Formulaire de Recherche</h1>
+      Vous souhaitez faire une recherche sur une installation ?
+      <hr>
+      <small class="text-muted">Veuillez remplir les champs suivants</small>
     </section>
 
+    <!-- Formulaire pour les inputs select -->
+    <section class="container mt-4">
+      <form class="row g-3" id="select-infos">
+
+        <div class="col">
+          <label for="select-marque-onduleur" class="form-label fw-bold">Marque de l'onduleur</label>
+          <select class="form-select" id="select-marque-onduleur" aria-label="Sélection de la marque">
+            <option selected>-</option>
+            <option value="marque-1">JGAHDI 28</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label for="select-marque-panneau" class="form-label fw-bold">Marque du panneau</label>
+          <select class="form-select" id="select-marque-panneau" aria-label="Sélection de la marque">
+            <option selected>-</option>
+            <option value="marque-1">JGAHDI 28</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label for="select-departement" class="form-label fw-bold">Département</label>
+          <select class="form-select" id="select-departement" aria-label="Sélection du departement">
+            <option selected>-</option>
+            <option value="departement-1">Finistère</option>
+          </select>
+        </div>
+
+      </form>
+    </section>
+
+    <!--Tableau de résultats-->
+    <section class="container mt-5">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Date d'installation</th>
+            <th scope="col">Nombre de panneaux</th>
+            <th scope="col">Surface</th>
+            <th scope="col">Puissance Crête</th>
+            <th scope="col">Localisation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a href="details.html">1</a></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="details.html">2</a></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="details.html">3</a></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Footer-->
     <footer>
       <div class="footer-content">
         <p class="project-name">Projet CIR2 2025</p>
         <p class="author-name"><a href="https://github.com/Swe3fty"> Gaspard Vieujean</a> & <a href="https://github.com/Colin503"> Colin Rousseau</a></p>
       </div>
     </footer>
+
   </body>
 </html>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
       integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/style.css"/>
     <!-- JS Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
@@ -24,6 +25,7 @@
     <!---<script src="js/processing.js" defer></script> -->
   </head>
   <body>
+
     <!-- Header -->
     <header>
     <div class="logo-titre">
@@ -39,14 +41,185 @@
     </nav>
     </header>
 
-    <!-- Errors -->
-    <section id="errors" class="container alert alert-danger" style="display: none">
+    <!--Titre-->
+    <section class="container mt-4">
+      <h1>Détails de l'installation</h1>
+      <small class="text-muted">Installation n°23400 :</small>
     </section>
-    
-    <section class="container">
+
+    <!--Modify Button-->
+    <div class="container mb-4 d-flex flex-row-reverse">
+      <a href="modify.html" class="btn btn-primary shadow rounded-0 mt-3">
+        Modifier l'installation
+      </a>
+    </div>
+
+    <!--Line-->
+    <div class="container">
+      <hr>
+    </div>
+
+    <!--Onduleur-->
+    <section class="container mb-4 mt-4 d-flex justify-content-evenly" id="onduleur">
+
+      <div class="card onduleur text-center border-0 shadow rounded-0 p-3 gap-4" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-bookmarks-fill"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Marque de l'onduleur</h5>
+          <h4 class="card-text onduleur-text" id="marque-onduleur">Sunny Boy</h4>
+        </div>
+      </div>
+
+      <div class="card onduleur text-center border-0 shadow rounded-0 p-3" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-bookmarks-fill"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Modele onduleur</h5>
+          <h4 class="card-text onduleur-text" id="modele-onduleur">Mad-man</h4>
+        </div>
+      </div>
+
+      <div class="card onduleur text-center border-0 shadow rounded-0 p-3" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-bookmarks-fill"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Nombre d'onduleur</h5>
+          <h4 class="card-text onduleur-text" id="nb-onduleur">45</h4>
+        </div>
+      </div>
      
     </section>
 
+    <!--Panneau-->
+    <section class="container mb-4 mt-4 d-flex justify-content-evenly" id="panneau">
+
+      <div class="card panneau text-center border-0 shadow rounded-0 p-3 gap-4" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-box"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Marque du panneau</h5>
+          <h4 class="card-text panneau-text" id="marque-panneau">ABDUAD</h4>
+        </div>
+      </div>
+
+      <div class="card panneau text-center border-0 shadow rounded-0 p-3" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-box"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Modele du panneau</h5>
+          <h4 class="card-text panneau-text" id="modele-panneau">Karcher</h4>
+        </div>
+      </div>
+
+      <div class="card panneau text-center border-0 shadow rounded-0 p-3" style="width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-box"></i>  
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Nombre de panneaux</h5>
+          <h4 class="card-text panneau-text" id="nb-panneaux">13</h4>
+        </div>
+      </div>
+     
+    </section>
+
+    <!--Energie/Puissance-->
+    <section class="container mb-4 mt-4 d-flex justify-content-evenly" id="energie">
+
+      <div class="card energie text-center border-0 shadow rounded-0 p-3 gap-4" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-substack"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Puissance Crête</h5>
+          <h4 class="card-text energie-text" id="puissance-crete">1200W</h4>
+        </div>
+      </div>
+
+      <div class="card energie text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-substack"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Surface</h5>
+          <h4 class="card-text energie-text" id="modele-panneau" id="surface">22m2</h4>
+        </div>
+      </div>
+
+      <div class="card energie text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-substack"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Pente</h5>
+          <h4 class="card-text energie-text" id="pente">13°</h4>
+        </div>
+      </div>
+
+      <div class="card energie text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-substack"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Production Pvgis</h5>
+          <h4 class="card-text energie-text" id="production-pvgis">1300</h4>
+        </div>
+      </div>
+     
+    </section>
+
+    <!--Localisation, installateur et date-->
+    <section class="container mb-4 mt-4 d-flex justify-content-evenly" id="energie">
+
+      <div class="card loc text-center border-0 shadow rounded-0 p-3 gap-4" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-activity"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Installateur</h5>
+          <h4 class="card-text loc-text" id="installateur">Freddy</h4>
+        </div>
+      </div>
+
+      <div class="card loc text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-activity"></i>  
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Nom de la ville</h5>
+          <h4 class="card-text loc-text" id="nom-ville">Brest</h4>
+        </div>
+      </div>
+
+      <div class="card loc text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-activity"></i>  
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Mois de l'installation</h5>
+          <h4 class="card-text loc-text" id="mois-installation">Février</h4>
+        </div>
+      </div>
+
+      <div class="card loc text-center border-0 shadow rounded-0 p-3" style="width: 19rem;">
+        <div class="icon">
+          <i class="bi bi-activity"></i>  
+        </div>
+        <div class="card-body">
+          <h5 class="card-text">Année de l'installation</h5>
+          <h4 class="card-text loc-text" id="annee-installation">2007</h4>
+        </div>
+      </div>
+     
+    </section>
+
+    <!--Footer-->
     <footer>
       <div class="footer-content">
         <p class="project-name">Projet CIR2 2025</p>
