@@ -2,6 +2,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&display=swap');
 
 
+<<<<<<< HEAD
+=======
+.container {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-lg-6 {
+  width: 50%;
+}
+
+.offset-lg-1 {
+  margin-left: 8.33%;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.recherche-formulaire {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.recherche-formulaire .form-group {
+  margin-bottom: 20px;
+}
+
+.recherche-formulaire label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recherche-formulaire input[type="number"], .recherche-formulaire select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recherche-formulaire button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #3688f2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.zone-texte {
+  margin-top: 40px; /* ajoute un espace entre le formulaire et la zone de texte */
+  padding: 20px; /* ajoute un espace interne à la zone de texte */
+  border: 1px solid #ccc; /* ajoute des bordures à la zone de texte */
+  border-radius: 10px; /* arrondit les coins de la zone de texte */
+  width: 80%; /* définit la largeur de la zone de texte */
+  height: 200px; /* définit la hauteur de la zone de texte */
+  overflow-y: auto; /* ajoute une barre de défilement si le contenu est trop grand */
+}
+
+
+
+>>>>>>> 6513d126e91783cd6abb855a764bd80840741e40
 /*========Header and navigation links========*/
 header {
   display: flex;

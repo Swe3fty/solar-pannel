@@ -51,10 +51,10 @@
   }
 
   // Exercise 3.
-  if ($requestRessource == 'ex3')
+  if ($requestRessource == 'installationsMap')
   {
-    if ($requestMethod == 'GET' && isset($_GET['value'])) 
-        $data = strlen($_GET['value']); //renvoie la taille de la chaine
+    if ($requestMethod == 'GET') 
+        $data = dbRequestCoordonnees($db);
 
     if ($requestMethod == 'POST' && isset($_POST['value1']) && isset($_POST['value2']))
       $data = substr($_POST['value1'],$_POST['value2']);

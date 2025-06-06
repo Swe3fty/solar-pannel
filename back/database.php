@@ -52,7 +52,7 @@
   // Récupère les coordonnées de toute les installations
   function dbRequestCoordonnees($db) {
     try {
-      $request = 'SELECT latitude, longitude FROM installation';
+      $request = 'SELECT  id, latitude, longitude FROM installation';
       $statement = $db->prepare($request);
       $statement->execute();
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
