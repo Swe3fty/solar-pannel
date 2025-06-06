@@ -53,13 +53,136 @@
     </section>
     
     <section class="container">
-      
-      <div class="card" id="map_carte">
-          <div class="card-header">
-            <h4>Carte des installations de panneaux solaires</h4>
+      <div class="row">
+         <div class="col-lg-6 offset-lg-1">
+          <div class="card" id="map_carte">
+              <div class="card-header">
+                <h4>Carte des installations de panneaux solaires</h4>
+                </div>
+              <div class="card-body">
+            <div id="map"></div>
             </div>
-          <div class="card-body">
-        <div id="map"></div>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1">
+          <div class="formulaire-recherche recherche-formulaire">
+            <form>
+              <div class="form-group">
+                <label for="annee-installation">Année d'installation</label>
+                <input type="number" id="annee-installation" name="annee-installation" placeholder="Ex : 2020">
+              </div>
+              <div class="form-group">
+                <label for="departement">Département</label>
+                <select id="departement" name="departement">
+                  <option value="">Sélectionnez un département</option>
+                  <option value="01">Ain</option>
+                  <option value="02">Aisne</option>
+                  <option value="03">Allier</option>
+                  <option value="04">Alpes-de-Haute-Provence</option>
+                  <option value="05">Hautes-Alpes</option>
+                  <option value="06">Alpes-Maritimes</option>
+                  <option value="07">Ardèche</option>
+                  <option value="08">Ardennes</option>
+                  <option value="09">Ariège</option>
+                  <option value="10">Aube</option>
+                  <option value="11">Aude</option>
+                  <option value="12">Aveyron</option>
+                  <option value="13">Bouches-du-Rhône</option>
+                  <option value="14">Calvados</option>
+                  <option value="15">Cantal</option>
+                  <option value="16">Charente</option>
+                  <option value="17">Charente-Maritime</option>
+                  <option value="18">Cher</option>
+                  <option value="19">Corrèze</option>
+                  <option value="2A">Corse-du-Sud</option>
+                  <option value="2B">Haute-Corse</option>
+                  <option value="21">Cote-d'Or</option>
+                  <option value="22">Cotes-d'Armor</option>
+                  <option value="23">Dordogne</option>
+                  <option value="24">Doubs</option>
+                  <option value="25">Drome</option>
+                  <option value="26">Eure</option>
+                  <option value="27">Eure-et-Loir</option>
+                  <option value="28">Finistere</option>
+                  <option value="29">Gard</option>
+                  <option value="30">Haute-Garonne</option>
+                  <option value="31">Gers</option>
+                  <option value="32">Gironde</option>
+                  <option value="33">Herault</option>
+                  <option value="34">Ille-et-Vilaine</option>
+                  <option value="35">Indre</option>
+                  <option value="36">Indre-et-Loire</option>
+                  <option value="37">Isère</option>
+                  <option value="38">Jura</option>
+                  <option value="39">Landes</option>
+                  <option value="40">Loir-et-Cher</option>
+                  <option value="41">Loire</option>
+                  <option value="42">Haute-Loire</option>
+                  <option value="43">Loire-Atlantique</option>
+                  <option value="44">Loiret</option>
+                  <option value="45">Lot</option>
+                  <option value="46">Lot-et-Garonne</option>
+                  <option value="47">Lozère</option>
+                  <option value="48">Maine-et-Loire</option>
+                  <option value="49">Manche</option>
+                  <option value="50">Marne</option>
+                  <option value="51">Haute-Marne</option>
+                  <option value="52">Mayenne</option>
+                  <option value="53">Meurthe-et-Moselle</option>
+                  <option value="54">Meuse</option>
+                  <option value="55">Morbihan</option>
+                  <option value="56">Moselle</option>
+                  <option value="57">Nièvre</option>
+                  <option value="58">Nord</option>
+                  <option value="59">Oise</option>
+                  <option value="60">Orne</option>
+                  <option value="61">Pas-de-Calais</option>
+                  <option value="62">Puy-de-Dôme</option>
+                  <option value="63">Pyrénées-Atlantiques</option>
+                  <option value="64">Hautes-Pyrénées</option>
+                  <option value="65">Pyrénées-Orientales</option>
+                  <option value="66">Bas-Rhin</option>
+                  <option value="67">Haut-Rhin</option>
+                  <option value="68">Rhône</option>
+                  <option value="69">Haute-Saône</option>
+                  <option value="70">Saône-et-Loire</option>
+                  <option value="71">Sarthe</option>
+                  <option value="72">Savoie</option>
+                  <option value="73">Haute-Savoie</option>
+                  <option value="74">Paris</option>
+                  <option value="75">Seine-Maritime</option>
+                  <option value="76">Seine-et-Marne</option>
+                  <option value="77">Yvelines</option>
+                  <option value="78">Deux-Sèvres</option>
+                  <option value="79">Somme</option>
+                  <option value="80">Tarn</option>
+                  <option value="81">Tarn-et-Garonne</option>
+                  <option value="82">Var</option>
+                  <option value="83">Vaucluse</option>
+                  <option value="84">Vendée</option>
+                  <option value="85">Vienne</option>
+                  <option value="86">Haute-Vienne</option>
+                  <option value="87">Vosges</option>
+                  <option value="88">Yonne</option>
+                  <option value="89">Territoire de Belfort</option>
+                  <option value="90">Essonne</option>
+                  <option value="91">Hauts-de-Seine</option>
+                  <option value="92">Seine-Saint-Denis</option>
+                  <option value="93">Val-de-Marne</option>
+                  <option value="94">Val-de-Saone</option>
+                  <option value="95">Val-d'Oise</option>
+                  <option value="96">Guadeloupe</option>
+                  <option value="97">Martinique</option>
+                  <option value="98">Guyane</option>
+                  <option value="99">Réunion</option>
+                </select>
+              </div>
+              <button type="submit">Rechercher</button>
+            </form>
+          </div>
+          <div class="zone-texte">
+            <p>Zone de texte</p>
+          </div>
         </div>
       </div>
     </section>
