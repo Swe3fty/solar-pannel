@@ -1,5 +1,5 @@
 <?php
-  require_once('constantes.php');
+  require_once('constants.php');
 
   //----------------------------------------------------------------------------
   // Connexion à la base de données
@@ -15,12 +15,14 @@
     return $db;
   }
 
+
   //----------------------------------------------------------------------------
-  // Récupère toutes les photos (miniatures)
-  function dbRequestPhotos($db) {
+  // Récupère les coordonnées d'une installation
+  function dbRequestInstallationData($db,$id) {
     try {
-      $request = 'SELECT id, small FROM photos';
+      $request = 'SELECT  id_installation, latitude, longitude, puissance_crete, nom_reg, nom_dep, ville FROM installation WHERE id=:id';
       $statement = $db->prepare($request);
+      $statement->bindParam(':id', $id, PDO::PARAM_INT);
       $statement->execute();
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $exception) {
@@ -29,31 +31,16 @@
     }
     return $result;
   }
-  
-  //----------------------------------------------------------------------------
-  // Récupère une photo spécifique
-  function dbRequestPhoto($db, $id) {
-    try {
-      $request = 'SELECT id, title, large FROM photos WHERE id=:id';
-      $statement = $db->prepare($request);
-      $statement->bindParam(':id', $id, PDO::PARAM_INT);
-      $statement->execute();
-      $result = $statement->fetch(PDO::FETCH_ASSOC);
-    } catch (PDOException $exception) {
-      error_log('Request error: '.$exception->getMessage());
-      return false;
-    }
-    return $result;
-  }
-
 
 
   //----------------------------------------------------------------------------
-  // Récupère les coordonnées de toute les installations
-  function dbRequestCoordonnees($db) {
+  // Récupère les coordonnées de toute les installations à partir d'une année et d'un département
+  function dbRequestCoordonnees($db, $annee, $dep) {
     try {
-      $request = 'SELECT  id, latitude, longitude FROM installation';
+      $request = 'SELECT  id_installation, latitude, longitude, puissance_crete, nom_dep, nom_reg FROM installation WHERE $annee=:annee_inst AND $dep=:dep';
       $statement = $db->prepare($request);
+      $statement->bindParam(':annee_inst', $annee, PDO::PARAM_INT);
+      $statement->bindParam(':dep', $dep, PDO::PARAM_INT);
       $statement->execute();
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $exception) {
