@@ -21,8 +21,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
       integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <!---<script src="js/processing.js" defer></script> -->
+    <!--Script JS ajoutés-->
+    <script src="/js/details.js" defer></script>
+  
   </head>
   <body>
 
@@ -44,15 +45,8 @@
     <!--Titre-->
     <section class="container mt-4">
       <h1>Détails de l'installation</h1>
-      <small class="text-muted">Installation n°23400 :</small>
+      <small class="text-muted" id="id-inst"></small>
     </section>
-
-    <!--Modify Button-->
-    <div class="container mb-4 d-flex flex-row-reverse">
-      <a href="modify.html" class="btn btn-primary shadow rounded-0 mt-3">
-        Modifier l'installation
-      </a>
-    </div>
 
     <!--Line-->
     <div class="container">
@@ -68,7 +62,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Marque de l'onduleur</h5>
-          <h4 class="card-text onduleur-text" id="marque-onduleur">Sunny Boy</h4>
+          <h4 class="card-text onduleur-text" id="marque-onduleur"></h4>
         </div>
       </div>
 
@@ -78,7 +72,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Modele onduleur</h5>
-          <h4 class="card-text onduleur-text" id="modele-onduleur">Mad-man</h4>
+          <h4 class="card-text onduleur-text" id="modele-onduleur"></h4>
         </div>
       </div>
 
@@ -88,7 +82,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Nombre d'onduleur</h5>
-          <h4 class="card-text onduleur-text" id="nb-onduleur">45</h4>
+          <h4 class="card-text onduleur-text" id="nb-onduleur"></h4>
         </div>
       </div>
      
@@ -103,7 +97,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Marque du panneau</h5>
-          <h4 class="card-text panneau-text" id="marque-panneau">ABDUAD</h4>
+          <h4 class="card-text panneau-text" id="marque-panneau"></h4>
         </div>
       </div>
 
@@ -113,7 +107,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Modele du panneau</h5>
-          <h4 class="card-text panneau-text" id="modele-panneau">Karcher</h4>
+          <h4 class="card-text panneau-text" id="modele-panneau"></h4>
         </div>
       </div>
 
@@ -123,7 +117,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Nombre de panneaux</h5>
-          <h4 class="card-text panneau-text" id="nb-panneaux">13</h4>
+          <h4 class="card-text panneau-text" id="nb-panneaux"></h4>
         </div>
       </div>
      
@@ -138,7 +132,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Puissance Crête</h5>
-          <h4 class="card-text energie-text" id="puissance-crete">1200W</h4>
+          <h4 class="card-text energie-text" id="puissance-crete"></h4>
         </div>
       </div>
 
@@ -148,7 +142,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Surface</h5>
-          <h4 class="card-text energie-text" id="modele-panneau" id="surface">22m2</h4>
+          <h4 class="card-text energie-text" id="surface"></h4>
         </div>
       </div>
 
@@ -158,7 +152,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Pente</h5>
-          <h4 class="card-text energie-text" id="pente">13°</h4>
+          <h4 class="card-text energie-text" id="pente"></h4>
         </div>
       </div>
 
@@ -168,7 +162,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Production Pvgis</h5>
-          <h4 class="card-text energie-text" id="production-pvgis">1300</h4>
+          <h4 class="card-text energie-text" id="production-pvgis"></h4>
         </div>
       </div>
      
@@ -183,7 +177,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Installateur</h5>
-          <h4 class="card-text loc-text" id="installateur">Freddy</h4>
+          <h4 class="card-text loc-text" id="installateur"></h4>
         </div>
       </div>
 
@@ -193,7 +187,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Nom de la ville</h5>
-          <h4 class="card-text loc-text" id="nom-ville">Brest</h4>
+          <h4 class="card-text loc-text" id="nom-ville"></h4>
         </div>
       </div>
 
@@ -203,7 +197,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Mois de l'installation</h5>
-          <h4 class="card-text loc-text" id="mois-installation">Février</h4>
+          <h4 class="card-text loc-text" id="mois-installation"></h4>
         </div>
       </div>
 
@@ -213,7 +207,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-text">Année de l'installation</h5>
-          <h4 class="card-text loc-text" id="annee-installation">2007</h4>
+          <h4 class="card-text loc-text" id="annee-installation"></h4>
         </div>
       </div>
      

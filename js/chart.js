@@ -1,135 +1,234 @@
-const cst = document.getElementById('myBarChart').getContext('2d');
-const ctx = document.getElementById('myPieChart').getContext('2d');
-const kst = document.getElementById('scatterChart').getContext('2d');
+'use strict';
 
-/*=======Graphique Histogramme=======*/
-const myBarChart = new Chart(cst, {
-type: 'bar',
-data: {
-    labels: ['Panneaux Solaires', 'Éoliennes', 'Hydroélectrique'],
-    datasets: [{
-    label: 'Types d’installations',
-    data: [45, 25, 30],
-    backgroundColor: [
-        'rgba(255, 99, 132, 0.6)',
-        'rgba(54, 162, 235, 0.6)',
-        'rgba(255, 206, 86, 0.6)'
-    ],
-    borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)'
-    ],
-    borderWidth: 1
-    }]
-},
-options: {
-    responsive: true,
-    plugins: {
-    legend: {
-        display: false // Légende inutile pour un seul dataset
-    },
-    title: {
-        display: true,
-        text: 'Répartition des types d’installations'
-    }
-    },
-    scales: {
-    y: {
-        beginAtZero: true,
-        title: {
-        display: true,
-        text: 'Nombre d’installations par années'
-        }
-    }
+/*=====Apelle des fonctions=================*/
+requestChartYearInfos();
+requestChartRegionInfos();
+requestChartRegionAndYearInfos();
+
+const cst = document.getElementById('first-bar-chart').getContext('2d');
+const ctx = document.getElementById('pie-chart').getContext('2d');
+const kst = document.getElementById('second-bar-chart').getContext('2d');
+
+/*========Request pour avoir l'informations installations par années=========*/
+async function requestChartYearInfos(){
+    const url = '/back/request.php/installationYearChart';
+    let response = await fetch(url);
+    if(response.ok){
+      displayYearChartInfos(await response.json());
+    } else {
+      console.log(response.status);
     }
 }
-});
 
-/*=======Graphique Camembert=======*/
-const myDoughnutChart = new Chart(ctx, {
-type: 'pie',
-data: {
-    labels: ['Panneaux Solaires', 'Éoliennes', 'Hydroélectrique'],
-    datasets: [{
-    label: 'Types d’installations',
-    data: [45, 25, 30],
-    backgroundColor: [
-        'rgba(255, 99, 132, 0.6)',
-        'rgba(54, 162, 235, 0.6)',
-        'rgba(255, 206, 86, 0.6)'
-    ],
-    borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)'
-    ],
-    borderWidth: 1
-    }]
-},
-options: {
-    responsive: false,
-    plugins: {
-    legend: {
-        position: 'top',
-    },
-    title: {
-        display: true,
-        text: 'Installations par régions'
-    }
+/*========Dessiner le grahpique par années==========*/
+function displayYearChartInfos(infos){
+
+  const labels = infos.map(item => item.annee);
+  const totals = infos.map(item => Number(item.total));
+
+  const myBarChart = new Chart(cst, {
+  type: 'bar',
+  data: {
+      labels: labels,
+      datasets: [{
+      label: 'Nombre d\'installation',
+      data: totals,
+      backgroundColor: [
+          'rgba(0, 17, 255, 0.6)',
+          'rgba(0, 119, 198, 0.6)',
+          'rgba(142, 148, 255, 0.6)'
+      ],
+      borderColor: [
+          'rgba(0, 17, 255, 0.6)',
+          'rgba(0, 119, 198, 0.6)',
+          'rgba(142, 148, 255, 0.6)'
+      ],
+      borderWidth: 1
+      }]
+  },
+  options: {
+      responsive: true,
+      plugins: {
+      legend: {
+          display: false 
+      },
+      title: {
+          display: true,
+          text: 'Installations par années'
+      }
+      },
+      scales: {
+        y: {
+            beginAtZero: true,
+            title: {
+            display: true,
+            text: 'Nombre d’installations'
+            }
+        },
+      }
+  }
+  });
+}
+
+/*========Request informations sur les regions et installations=========*/
+async function requestChartRegionInfos(){
+    const url = '../back/request.php/installationRegionChart';
+    let response = await fetch(url);
+    if(response.ok){
+      displayRegionChartInfos(await response.json());
+    } else {
+      console.log(response.status);
     }
 }
-});
 
-/*===========Graphique A point============*/
-  const regions = ["Île-de-France", "Auvergne-Rhône-Alpes", "Occitanie", "Bretagne"];
-  const colors = ["#FF6384", "#36A2EB", "#4BC0C0", "#FFCE56"];
+/*========Dessiner le graphique régions==========*/
+function displayRegionChartInfos(data){
 
-  const data = {
-    datasets: regions.map((region, index) => ({
-      label: region,
-      backgroundColor: colors[index],
-      borderColor: colors[index],
-      showLine: false,
-      data: Array.from({ length: 15 }, (_, i) => ({
-        x: 1990 + Math.floor(Math.random() * 33), // année entre 1990 et 2023
-        y: Math.floor(Math.random() * 1000), // installations fictives
-      }))
-    }))
-  };
+  const labels = data.map(item => item.nom_reg);
+  const totals = data.map(item => Number(item.nb_installations));
 
-  const config = {
-    type: 'scatter',
-    data: data,
-    options: {
+  const myDoughnutChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+      labels: labels,
+      datasets: [{
+      label: 'Types d’installations',
+      data: totals,
+      backgroundColor: [
+          'rgb(255, 0, 0)',
+          'rgb(255, 94, 0)',
+          'rgb(255, 204, 0)',
+          'rgb(162, 255, 0)',
+          'rgb(0, 255, 42)',
+          'rgb(0, 255, 128)',
+          'rgb(0, 221, 255)',
+          'rgb(0, 76, 255)',
+          'rgb(111, 0, 255)',
+          'rgb(255, 0, 195)'
+
+      ],
+      borderColor: [
+          'rgb(255, 0, 0)',
+          'rgb(255, 94, 0)',
+          'rgb(255, 204, 0)',
+          'rgb(162, 255, 0)',
+          'rgb(0, 255, 42)',
+          'rgb(0, 255, 128)',
+          'rgb(0, 221, 255)',
+          'rgb(0, 76, 255)',
+          'rgb(111, 0, 255)',
+          'rgb(255, 0, 195)'
+      ],
+      borderWidth: 1
+      }]
+  },
+  options: {
       responsive: false,
       plugins: {
+      legend: {
+          position: 'top',
+      },
+      title: {
+          display: true,
+          text: 'Installations par régions'
+      }
+      }
+  }
+  });
+  
+}
+
+
+/*========Request Informations sur les installations par années et par régions=========*/
+async function requestChartRegionAndYearInfos(){
+    const url = '../back/request.php/installationRegionYear';
+    let response = await fetch(url);
+    if(response.ok){
+      displayChartRegionAndYearInfos(await response.json());
+    } else {
+      console.log(response.status);
+    }
+}
+
+
+/*=========Dessiner le graphique par années et par régions======*/
+function displayChartRegionAndYearInfos(info){
+
+  const years = info.map(item => item.annee_inst);
+  const regions = info.map(item => item.nom_reg);
+  const totals = info.map(item => Number(item.nb_installations));
+
+  //Couleur unique par région
+  const colorMap = {};
+  let colorIndex = 0;
+  regions.forEach(region => {
+    if (!colorMap[region]) {
+      colorMap[region] = `hsl(${(colorIndex * 40) % 360}, 70%, 60%)`;
+      colorIndex++;
+    }
+  });
+  const colors = regions.map(region => colorMap[region]);
+
+  const myBarChart = new Chart(kst, {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'Installations',
+        data: totals,
+        backgroundColor: colors
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        },
         title: {
           display: true,
-          text: "Nombre d'installations par région (1990 - 2023)"
+          text: 'Installations par année (couleur = région)'
         },
         tooltip: {
-          mode: 'nearest'
+          callbacks: {
+            label: function(context) {
+              const region = regions[context.dataIndex];
+              const value = totals[context.dataIndex];
+              return `${region}: ${value} installations`;
+            }
+          }
         }
       },
       scales: {
         x: {
-          type: 'linear',
-          position: 'bottom',
+          beginAtZero: true,
           title: {
             display: true,
-            text: 'Année'
-          },
-          min: 1990,
-          max: 2023
+            text: 'Nombre d’installations'
+          }
         },
         y: {
           title: {
             display: true,
-            text: "Nombre d'installations"
+            text: 'Années'
           }
         }
       }
     }
-  };
-  new Chart(kst, config);
+  });
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,8 @@ Ce projet est une application web dédiée à la gestion ou visualisation de don
 projet_panneaux_solaires/  
 ├── index.html # Page principale  
 ├── assets/ # Dossier des ressources statiques  
+├── back/ # Contient toute la partie backend
+    ├── /html # Fichier html du backend
 ├── css/ # Fichiers CSS  
 ├── js/ # Scripts JavaScript   
 ├── php/ # Scripts PHP  

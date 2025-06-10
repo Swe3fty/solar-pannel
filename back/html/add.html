@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Photo Solar</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <!-- JS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
+      integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Charts Js-->
+    <script src="/js/installationadd.js" defer></script>
+    <!--Script JS ajotués-->
+    <script src="/js/select.js" defer></script>
+
+    
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+      <div class="logo-titre">
+          <img src="/assets/photosolarlogo.png" alt="Logo">
+          <h1><a href="#">Photo Solar</a></h1>
+      </div>
+      <nav>
+          <ul>
+            <li><a href="/back/index.html">partie Backend</a></li>
+            <li><a href="../index.html">Retourner sur la partie FrontEnd</a></li>
+          </ul>
+      </nav>
+    </header>
+    
+    <!--Phrases d'accorches présentation-->
+    <section class="container mt-4 mb-4 text-center" id="presentation">
+        <h1>Ajouter une installation</h1>        
+        <hr>
+    </section>
+
+
+    <!--Formulaire d'ajout d'installations--> 
+    <div class="card mt-4 mx-4 mb-4">
+        <div class="card-header">
+          <h4>Ajouter une installation</h4>
+        </div>
+        <div class="card-body">
+          <form class="row g-3" id="ajout-inst">
+
+            <div class="col-md-4">
+              <label for="inputZip" class="form-label">Nombre de panneaux</label>
+              <input type="number" class="form-control" id="nb_panneau">
+            </div>
+
+            <!--Panneaux-->
+            <div class="col">
+              <label for="select-marque-panneau" class="form-label">Modele du panneau</label>
+              <select class="form-select" id="select-modele-panneau">
+                <option selected>-</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="inputZip" class="form-label">Nombre d'onduleurs</label>
+              <input type="number" class="form-control" id="nb_onduleur">
+            </div>
+
+            <!--Modle onduleurs-->
+            <div class="col-md-4">
+              <label for="select-marque-onduleur" class="form-label">Modele de l'onduleur</label>
+              <select class="form-select" id="select-modele-onduleur">
+                <option selected>-</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Puissance de crete</label>
+              <input type="text" class="form-control" id="p_crete" placeholder="en W">
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Production PVGIS</label>
+              <input type="text" class="form-control" id="pvgis" placeholder="en kWh/m²">
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Surface</label>
+              <input type="text" class="form-control" id="surface" placeholder="en m²">
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Pente</label>
+              <input type="text" class="form-control" id="pente" placeholder="en degré">
+            </div>
+
+            <!--Installateur-->
+            <div class="col-md-2">
+              <label for="select-marque-onduleur" class="form-label">Installateur</label>
+              <select class="form-select" id="select-installateur">
+                <option selected>-</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Mois d'installation :</label>
+              <input type="text" class="form-control" id="mois_installation" placeholder="2 = Février">
+            </div>
+
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Année</label>
+              <input type="text" class="form-control" id="annee_installation">
+            </div>
+
+            <div class="col-md-1">
+              <label for="inputZip" class="form-label">Longitude</label>
+              <input type="text" class="form-control" id="long" placeholder="format : 2.345">
+            </div>
+
+            <div class="col-md-1 mx-1">
+              <label for="inputZip" class="form-label">Latitude</label>
+              <input type="text" class="form-control" id="lat" placeholder="format : 48.123">
+            </div>
+
+            <!--Code insee-->
+            <div class="col-md-2">
+              <label for="select-marque-onduleur" class="form-label">Code Insee</label>
+              <select class="form-select" id="select-code-insee">
+                <option selected>-</option>
+              </select>
+            </div>
+            
+            
+           <!--Boutton envoyer-->  
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
+          </form>
+      </div>
+    </div>
+        
+        
+    <!--Footer-->
+    <footer>
+      <div class="footer-content">
+        <p class="project-name">Projet CIR2 2025</p>
+        <p class="author-name"><a href="https://github.com/Swe3fty"> Gaspard Vieujean</a> & <a href="https://github.com/Colin503"> Colin Rousseau</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
