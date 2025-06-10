@@ -62,6 +62,11 @@
     if($requestRessource == 'random-code-insee'){
       $data = dbRequestRandomCodeInsee($db);
     }
+    if ($requestRessource == 'installationsMap')
+    {
+      if ($requestMethod == 'GET') 
+          $data = dbRequestCoordonnees($db);
+    }
   }
 
   /*==============Method Post=============*/
