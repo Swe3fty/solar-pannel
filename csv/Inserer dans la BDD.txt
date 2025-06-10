@@ -1,0 +1,50 @@
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/region.csv'
+INTO TABLE region
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(nom_reg);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/dep.csv'
+INTO TABLE departement
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(nom_dep, nom_reg);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/ville.csv'
+INTO TABLE ville
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(code_insee, nom_ville, population, nom_dep);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/installateur.csv'
+INTO TABLE installateur
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(nom_inst);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/onduleur.csv'
+INTO TABLE onduleur
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(modele_ond, marque_ond);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/panneau.csv'
+INTO TABLE panneau
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+(modele_panneau, marque_panneau);
+
+LOAD DATA LOCAL INFILE 'D:/Isen/2eme_Annee/Projet CIR2/installation.csv'
+INTO TABLE installation
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(nb_panneau, puissance_crete, surface, pente, production_pvgis, nb_onduleur, latitude, longitude, mois_inst, annee_inst, nom_inst, modele_ond, modele_panneau, code_insee);
+
+
+
+
+
+
+
+
