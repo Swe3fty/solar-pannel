@@ -3,15 +3,15 @@
 Ce projet est une application web dédiée à la gestion ou visualisation de données liées aux panneaux solaires.
 
 ## 👥 Auteurs
-  - Colin Rousseau
-  - Gaspard Vieujean
+  - Colin503
+  - Sweefty
 
 ## Structure du projet
 projet_panneaux_solaires/    
 ├── index.html # Page principale    
 ├── assets/ # Dossier des ressources statiques    
 ├── back/ # Contient toute la partie backend  
-    ├── /html # Fichier html du backend                                                                                                    
+|   ├── /html # Fichier html du backend                                                                                                    
 ├── csv/ # Fichier contenant les données au format csv    
 ├── css/ # Fichiers CSS    
 ├── js/ # Scripts JavaScript     
