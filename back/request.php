@@ -64,8 +64,7 @@
     }
     if ($requestRessource == 'installationsMap')
     {
-      if ($requestMethod == 'GET') 
-          $data = dbRequestCoordonnees($db);
+        $data = dbRequestCoordonnees($db);
     }
   }
 

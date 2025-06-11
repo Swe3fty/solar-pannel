@@ -1,6 +1,8 @@
 /*========fonts========*/
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&display=swap');
 
+
+/*=======Map=======*/
 .container {
   padding: 20px;
 }
@@ -60,13 +62,13 @@
 }
 
 .zone-texte {
-  margin-top: 40px; /* ajoute un espace entre le formulaire et la zone de texte */
-  padding: 20px; /* ajoute un espace interne à la zone de texte */
-  border: 1px solid #ccc; /* ajoute des bordures à la zone de texte */
-  border-radius: 10px; /* arrondit les coins de la zone de texte */
-  width: 80%; /* définit la largeur de la zone de texte */
-  height: 200px; /* définit la hauteur de la zone de texte */
-  overflow-y: auto; /* ajoute une barre de défilement si le contenu est trop grand */
+  margin-top: 40px; 
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  width: 80%; 
+  height: 200px; 
+  overflow-y: auto; 
 }
 
 
