@@ -11,7 +11,7 @@ projet_panneaux_solaires/
 ├── index.html # Page principale    
 ├── assets/ # Dossier des ressources statiques    
 ├── back/ # Contient toute la partie backend  
-|   ├── /html # Fichier html du backend                                                                                                    
+├` `├── /html # Fichier html du backend                                                                                                    
 ├── csv/ # Fichier contenant les données au format csv    
 ├── css/ # Fichiers CSS    
 ├── js/ # Scripts JavaScript     
