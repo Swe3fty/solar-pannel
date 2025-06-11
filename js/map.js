@@ -31,15 +31,13 @@ async function checkChange(event) {
     //document.getElementById('formMap').clear();
     annee_installation = document.getElementById('annee_installation').value;
     departement = document.getElementById('departementSelect').value;
-    console.log(departement);
-    console.log(annee_installation);
     requestInstallationsMap();
 }
 
 
 // Récupère les installations depuis le serveur
 async function requestInstallationsMap() {
-    let response = await fetch('../back/request.php/installationsMap');
+    let response = await fetch('/back/request.php/installationsMap');
     if (response.ok) {
         //console.log("rentre dans la condition")
         const data = await response.json()
@@ -57,11 +55,13 @@ function displayInstallationsMap(installations,annee_inst,departement) {
             markersGroup.addLayer(marker);
             
             marker.bindPopup(installations[i].title);
-            
             marker.on('click', function() {
                 const installation = installations[i];
-                const details = '<div class="installation-details">'+installation.title+'<p><strong>Nom:</strong> '+installation.title+'</p>'+installation.annee_inst+'<p><strong>Année:</strong> '+installation.annee_inst+'</p>'+installation.nom_dep+'<p><strong>Département:</strong> '+installation.nom_dep+'</p>'+installation.puissance_crete+'<p><strong>Puissance:</strong> '+installation.puissance_crete+' kW</p>'+installation.latitude&&installation.longitude+'<p><strong>Coordonnées:</strong> '+installation.latitude+','+installation.longitude+'</p></div>';
-            document.getElementById('zone-de-texte').innerHTML = details;
+                const data = 'Installations n°'+installation.id_installation+'                                                      Année d\'installation : '+installation.annee_inst+'                                                     Département : '+installation.nom_dep+'                                                      Puissance crête : '+installation.puissance_crete+'                                                      Coordonnées : '+installation.latitude+' '+installation.longitude;
+                document.getElementById('zone-de-texte').textContent = data;
+                /*=====Rediriger vers les détails de l'installation=====*/
+                const redirectDiv = document.getElementById('details-redirect');
+                redirectDiv.innerHTML = `<a href="/html/details?id=${installation.id_installation}" class="btn btn-primary mt-2">Voir les détails de l'installation</a>`;
             });
 
         }

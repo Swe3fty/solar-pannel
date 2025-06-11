@@ -7,7 +7,7 @@
 
     <!-- Title -->
     <title>Photo Solar</title>
-    <link rel="icon" type="image/x-icon" href="../assets/icons8-soleil-120.png" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons8-soleil-120.png" />
 
 
     <!-- CSS Styles -->
@@ -30,7 +30,7 @@
       integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <script src="../js/map.js" defer></script>
+    <script src="/js/map.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -66,9 +66,9 @@
           <div class="formulaire-recherche recherche-formulaire">
             <form method="" action="#" id="formMap">
               <div class="form-group">
-                <label for="annee-installation">Année d'installation</label>
+                <label for="annee-installation"></label>
                   <div class="form-group">
-                <label for="annee-installation">Année d'installation</label>
+                <label for="annee-installation" class="fw-bold">Année d'installation</label>
                 <select class="form-select form-select" id="annee_installation" name="annee" aria-label="Sélection de l'annee d'installation">
                   <option selected>Année</option>
                   <option value="2000">2000</option>
@@ -95,7 +95,7 @@
               </div>
               </div>
               <div class="form-group">
-                <label for="departement">Département</label>
+                <label for="departement" class="fw-bold">Département</label>
                 <select class="form-select form-select" id="departementSelect" name="departement" aria-label="Sélection de département">
                   <option selected>Département</option>
                       <option value="Ain">01 - Ain</option>
@@ -204,7 +204,12 @@
               <button id= "envoyer" name="envoyer" type="submit">Rechercher</button>
             </form>
           </div>
-            <textarea  id="zone-de-texte" class="zone-details"></textarea>
+          <!--Affichage des informations-->
+          <form action="" class="form-group">
+              <textarea  id="zone-de-texte" class="form-control" rows="10"></textarea>
+              <div class="mt-4" id="details-redirect">
+              </div>
+          </form>
           </div>
         </div>
       </div>
