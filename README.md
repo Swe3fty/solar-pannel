@@ -3,8 +3,8 @@
 Ce projet est une application web dédiée à la gestion ou visualisation de données liées aux panneaux solaires.
 
 ## 👥 Auteurs
-  - `Colin Rousseau
-  - `Gaspard Vieujean
+  - Colin Rousseau
+  - Gaspard Vieujean
 
 ## Structure du projet
 projet_panneaux_solaires/  
