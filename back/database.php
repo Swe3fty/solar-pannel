@@ -16,6 +16,20 @@
   }
 
   //----------------------------------------------------------------------------
+  // Récupère les coordonnées de toute les installations
+  function dbRequestCoordonnees($db) {
+    try {
+      $request = 'SELECT  id_installation, latitude, longitude, puissance_crete, departement.nom_dep, departement.nom_reg, annee_inst FROM installation JOIN ville ON installation.code_insee = ville.code_insee JOIN departement ON ville.nom_dep = departement.nom_dep';
+      $statement = $db->prepare($request);
+      $statement->execute();
+      $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $exception) {
+      error_log('Request error: '.$exception->getMessage());
+      return false;
+    }
+    return $result;
+  }
+  //----------------------------------------------------------------------------
   // Récupère une installation en fonction de l'id
   function dbRequestInstallationId($db,$id){
       try {
