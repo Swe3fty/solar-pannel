@@ -61,7 +61,7 @@ function displayInstallationsMap(installations,annee_inst,departement) {
                 document.getElementById('zone-de-texte').textContent = data;
                 /*=====Rediriger vers les détails de l'installation=====*/
                 const redirectDiv = document.getElementById('details-redirect');
-                redirectDiv.innerHTML = `<a href="/html/details?id=${installation.id_installation}" class="btn btn-primary mt-2">Voir les détails de l'installation</a>`;
+                redirectDiv.innerHTML = `<a href="/html/details.html?id=${installation.id_installation}" class="btn btn-primary mt-2">Voir les détails de l'installation</a>`;
             });
 
         }
