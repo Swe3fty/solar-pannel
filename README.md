@@ -56,7 +56,8 @@ projet_panneaux_solaires/
     ```
 
 5. Crée votre user et administrer les droits avec : (adapter localhost ou l'ip de votre machine)
-  ```CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+  ```
+      CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
       GRANT ALL PRIVILEGES ON my_database.* TO 'username'@'localhost';
       FLUSH PRIVILEGES;
   ```
