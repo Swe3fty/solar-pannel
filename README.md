@@ -7,17 +7,17 @@ Ce projet est une application web dédiée à la gestion ou visualisation de don
   - Gaspard Vieujean
 
 ## Structure du projet
-projet_panneaux_solaires/  
-├── index.html # Page principale  
-├── assets/ # Dossier des ressources statiques  
-├── back/ # Contient toute la partie backend
-├── back ├── /html # Fichier html du backend
-├── csv/ # Fichier contenant les données au format csv  
-├── css/ # Fichiers CSS  
-├── js/ # Scripts JavaScript   
-├── php/ # Scripts PHP  
-├── sql/ # Scripts de base de données  
-└── html/ # Pages HTML  
+projet_panneaux_solaires/    
+├── index.html # Page principale    
+├── assets/ # Dossier des ressources statiques    
+├── back/ # Contient toute la partie backend  
+    ├── /html # Fichier html du backend                                                                                                    
+├── csv/ # Fichier contenant les données au format csv    
+├── css/ # Fichiers CSS    
+├── js/ # Scripts JavaScript     
+├── php/ # Scripts PHP    
+├── sql/ # Scripts de base de données    
+└── html/ # Pages HTML    
 
 
 ## Technologies utilisées
